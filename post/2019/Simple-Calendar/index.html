@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>Simple Calendar | Nathan Almeida</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="C,API,Calendário,Data,Hora">
+    
+    <meta name="description" content="Simple Calendar é uma API simples para fazer cálculos com data e hora totalmente em C, podendo trabalhar tanto com milissegundos ou com a representação numérica da data e hora. Exemplos:Funções com mi">
+<meta name="keywords" content="C,API,Calendário,Data,Hora">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simple Calendar">
+<meta property="og:url" content="https://neitan96.github.io/post/2019/Simple-Calendar/index.html">
+<meta property="og:site_name" content="Nathan Almeida">
+<meta property="og:description" content="Simple Calendar é uma API simples para fazer cálculos com data e hora totalmente em C, podendo trabalhar tanto com milissegundos ou com a representação numérica da data e hora. Exemplos:Funções com mi">
+<meta property="og:locale" content="pt-BR">
+<meta property="og:updated_time" content="2019-08-14T20:45:23.274Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Simple Calendar">
+<meta name="twitter:description" content="Simple Calendar é uma API simples para fazer cálculos com data e hora totalmente em C, podendo trabalhar tanto com milissegundos ou com a representação numérica da data e hora. Exemplos:Funções com mi">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/LogoNeitan.png">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-68127050-3', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Desenvolvedor back-end</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/API/">API</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/API/C/">C</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">Sobre</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Busca"><input type="hidden" name="sitesearch" value="https://neitan96.github.io"></form>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/API/">API</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/API/C/">C</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Simple-Calendar" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Simple Calendar
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/post/2019/Simple-Calendar/" class="article-date">
+            <time datetime="2019-08-14T20:14:13.000Z" itemprop="datePublished">14-08-2019</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/API/">API</a>, <a class="tag-link" href="/tags/C/">C</a>, <a class="tag-link" href="/tags/Calendario/">Calendário</a>, <a class="tag-link" href="/tags/Data/">Data</a>, <a class="tag-link" href="/tags/Hora/">Hora</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>Simple Calendar é uma API simples para fazer cálculos com data e hora totalmente em C, podendo trabalhar tanto com milissegundos ou com a representação numérica da data e hora.</p>
+<h3 id="Exemplos"><a href="#Exemplos" class="headerlink" title="Exemplos:"></a>Exemplos:</h3><p>Funções com milissegundos:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   Milliseconds dataHora = <span class="number">1569165720000</span>;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Adicionando 12 horas</span></span><br><span class="line">   scMilliAddHour(&amp;dataHora, <span class="number">12</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Subtraindo 3 meses</span></span><br><span class="line">   scMilliAddMonth(&amp;dataHora, <span class="number">-3</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Definindo o ano como 2020</span></span><br><span class="line">   scMilliSetYear(&amp;dataHora, <span class="number">2020</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Indo para o próximo sábado</span></span><br><span class="line">scMilliJumpToWeekDay(&amp;dataHora, SATURDAY);</span><br></pre></td></tr></table></figure>
+
+<p>Funções com Calendar:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 22/09/2019 15:22:00 000</span></span><br><span class="line">   Calendar dataHora = scMakeCalendar(<span class="number">2019</span>, <span class="number">09</span>, <span class="number">22</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">00</span>, <span class="number">000</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Adicionando 20 dias</span></span><br><span class="line">   scCalAddMonthDay(&amp;dataHora, <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Subtraindo 0 minutos</span></span><br><span class="line">   scCalAddMinute(&amp;dataHora, <span class="number">-40</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Definindo a hora como 12</span></span><br><span class="line">   scCalSetHour(&amp;dataHora, <span class="number">12</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Indo para a segunda semana do ano</span></span><br><span class="line">scCalJumpToWeekYear(&amp;dataHora, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Imprimindo a data</span></span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"%i/%i/%i"</span>, dataHora.monthDay, dataHora.month+<span class="number">1</span>, dataHora.year)</span><br></pre></td></tr></table></figure>
+
+<p>Outras funções:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Convertendo Milliseconds para Calendar</span></span><br><span class="line">Calendar dataHora = scMillisecondsToCalendar(<span class="number">1569165720000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Convertendo Calendar para Milliseconds</span></span><br><span class="line">Milliseconds dataHoraMilli = scCalendarToMilliseconds(dataHora);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Estrutura"><a href="#Estrutura" class="headerlink" title="Estrutura"></a>Estrutura</h2><h5 id="Structs"><a href="#Structs" class="headerlink" title="Structs"></a>Structs</h5><ul>
+<li>Milliseconds: É um typedef para long long int, utilizado para representar millisegundos.</li>
+<li>Calendar: Representa uma data e hora utilizando variaveis do tipo inteiro.</li>
+<li>ExtractTime: Feito para ser utilizado com o ExtractCalendar, ele serve para indicar o milissegundo de um determinado ponto da data/hora, exemplo se o ExtractTime representar um determinado ano, esse ano fica indicado na variável “value” e em “milliseconds” fica o milissegundo do início do ano, se representar um mês, esse mês fica indicado na variável “value” e em “milliseconds” fica o milissegundo do início do mês.</li>
+<li>ExtractCalendar: É o conjunto de varios ExtractTime representando uma data e hora.</li>
+</ul>
+<h5 id="Cabecalhos"><a href="#Cabecalhos" class="headerlink" title="Cabeçalhos"></a>Cabeçalhos</h5><ul>
+<li><p>SimpleCalendarBase.h<br>Cabeçalho base, contém structs e funções necessarias para outros cabeçalhos.</p>
+</li>
+<li><p>SimpleConverts.h<br>Funções para converter Milliseconds em Calendar ou ExtractCalendar e virse-versa.</p>
+</li>
+<li><p>SimpleMilliseconds.h<br>Funções que usa como base a struct Milliseconds para fazer cálculos de datas e horas.</p>
+</li>
+<li><p>SimpleCalendar.h<br>Funções que usa como base a struct Calendar para fazer cálculos de datas e horas.</p>
+</li>
+<li><p>SimpleExtract.h<br>Funções que detalha a data e hora usando o ExtractCalendar, a data pode ser detalhada com Calendar ou Milliseconds.</p>
+</li>
+</ul>
+<h5 id="Funcoes-bases"><a href="#Funcoes-bases" class="headerlink" title="Funções bases"></a>Funções bases</h5><p>Todas funções da API começa com <strong>sc</strong> e funções para trabalhar com milissegundos começa com <strong>scMilli</strong> e para trabalhar com Calendar começa com <strong>scCal</strong>.</p>
+<ul>
+<li><strong>Bases</strong>: Compare, DiffTime, ToString</li>
+<li><strong>Incrementos/Decrementos</strong>: AddMillisecond, AddSecond, AddMinute, AddHour, AddMonthDay, AddMonth, AddYear, AddWeek</li>
+<li><strong>Definição de valores</strong>: SetTimeZone, SetMillisecond, SetSecond, SetMinute, SetHour, SetMonthDay, SetMonth, SetYear, SetWeekDay, SetWeekMonth, SetWeekYear</li>
+<li><strong>Informações</strong>: GetYearDay, GetWeekDay, GetWeekMonth, GetWeekYear</li>
+<li><strong>Contadores</strong>: CountMonthDay, CountHour, CountMinute, CountSecond</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://neitan96.github.io/post/2019/Simple-Calendar/" data-id="cjzbq6fw700006p191kenonca" class="article-share-link"><i class="fa fa-share"></i>Compartilhar</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Nathan Almeida"
+        },
+        "headline": "Simple Calendar",
+        "image": "https://neitan96.github.io",
+        "keywords": "C API Calendário Data Hora",
+        "genre": "API C",
+        "datePublished": "2019-08-14",
+        "dateCreated": "2019-08-14",
+        "dateModified": "2019-08-14",
+        "url": "https://neitan96.github.io/post/2019/Simple-Calendar/",
+        "description": "Simple Calendar é uma API simples para fazer cálculos com data e hora totalmente em C, podendo trabalhar tanto com milissegundos ou com a representação numérica da data e hora.
+Exemplos:Funções com mi"
+        "wordCount": 509
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>seguir:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/Neitan96/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recentes</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/post/2019/Simple-Calendar/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/API/">API</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/API/C/">C</a></p>
+                            <p class="item-title"><a href="/post/2019/Simple-Calendar/" class="title">Simple Calendar</a></p>
+                            <p class="item-date"><time datetime="2019-08-14T20:14:13.000Z" itemprop="datePublished">14-08-2019</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categorias</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/API/">API</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/API/C/">C</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">arquivos</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">Agosto 2019</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Calendario/">Calendário</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data/">Data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hora/">Hora</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/API/" style="font-size: 10px;">API</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Calendario/" style="font-size: 10px;">Calendário</a> <a href="/tags/Data/" style="font-size: 10px;">Data</a> <a href="/tags/Hora/" style="font-size: 10px;">Hora</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Nathan Almeida</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
