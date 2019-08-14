@@ -226,7 +226,7 @@ body,
 }
 ::selection {
   color: #fff;
-  background: #006bde;
+  background: #3d9688;
 }
 body {
   background: #eaeaea;
@@ -401,7 +401,7 @@ code {
 }
 .nav-container {
   padding: 0 15px;
-  background: #33363b;
+  background: #393d3f;
   z-index: 1;
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 -1px 0 rgba(0,0,0,0.2), inset 1px 0 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 -1px 0 rgba(0,0,0,0.2), inset 1px 0 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
@@ -481,7 +481,7 @@ code {
   overflow: hidden;
   position: absolute;
   width: 180px;
-  background: #33363b url("images/opacity-10.png") repeat;
+  background: #393d3f url("images/opacity-10.png") repeat;
 }
 .nav-container .nav-container-inner #main-nav .main-nav-list-item .main-nav-list-child li {
   -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.06);
@@ -563,7 +563,7 @@ code {
   display: none;
 }
 #sidebar .sidebar-top {
-  background: #006bde;
+  background: #3d9688;
   padding: 15px 30px;
 }
 #sidebar .sidebar-top:before,
@@ -682,7 +682,7 @@ code {
   background: rgba(0,0,0,0.02);
 }
 .article-nav-link-wrap:hover .icon {
-  color: #006bde;
+  color: #3d9688;
 }
 .article-nav-caption {
   display: block;
@@ -858,7 +858,7 @@ code {
 }
 #recent-post li .item-inner a a,
 #recent-post li .item-inner .item-category a {
-  color: #006bde;
+  color: #3d9688;
 }
 #recent-post li .item-inner a a:hover,
 #recent-post li .item-inner .item-category a:hover {
@@ -889,7 +889,7 @@ code {
   opacity: 0.8;
 }
 #recent-post li:hover .item-title a {
-  color: #006bde;
+  color: #3d9688;
 }
 .category-list-count,
 .tag-list-count,
@@ -953,7 +953,7 @@ code {
 }
 .article-summary a {
   text-decoration: none;
-  color: #006bde;
+  color: #3d9688;
 }
 .article-summary .article-summary-inner {
   margin-right: 30px;
@@ -1036,7 +1036,7 @@ code {
   opacity: 0.7;
 }
 .article-summary:hover .article-title a {
-  color: #006bde;
+  color: #3d9688;
 }
 .article-category {
   float: left;
@@ -1061,7 +1061,7 @@ code {
   margin-bottom: 10px;
 }
 a.article-title:hover {
-  color: #006bde;
+  color: #3d9688;
 }
 .article-meta {
   line-height: 1.6em;
@@ -1100,7 +1100,7 @@ a.article-title:hover {
   overflow: hidden;
 }
 .article-summary .article-meta a {
-  color: #006bde;
+  color: #3d9688;
 }
 .article-summary .article-meta > div {
   margin-right: 0;
@@ -1144,7 +1144,7 @@ a.article-title:hover {
   margin: 1.3em 0;
 }
 .article-entry a {
-  color: #006bde;
+  color: #3d9688;
   text-decoration: none;
 }
 .article-entry a:hover {
@@ -1266,10 +1266,10 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #006bde;
+  background: #3d9688;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #0056b2;
+  text-shadow: 0 1px #31786d;
 }
 .article-footer {
   font-size: 14px;
@@ -1492,7 +1492,7 @@ a.article-title:hover {
   padding: 30px 30px 20px;
 }
 #comments a {
-  color: #006bde;
+  color: #3d9688;
 }
 .archives-wrap {
   margin: block-margin 0;
@@ -1548,7 +1548,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #006bde;
+  color: #3d9688;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1591,7 +1591,7 @@ a.article-title:hover {
 }
 #page-nav .page-number,
 #page-nav .extend {
-  color: #006bde;
+  color: #3d9688;
   position: relative;
   overflow: hidden;
   font-size: 16px;
@@ -1614,7 +1614,7 @@ a.article-title:hover {
 #page-nav .page-number.current,
 #page-nav .extend.current {
   color: #444;
-  border-bottom: 3px solid #006bde;
+  border-bottom: 3px solid #3d9688;
   border-top: 1px solid #f1f1f1;
 }
 #page-nav .space {
@@ -1731,7 +1731,7 @@ i.icon:before {
   display: inline-block;
 }
 .ins-close:hover {
-  color: #006bde;
+  color: #3d9688;
 }
 .ins-search-container {
   left: 50%;
@@ -1806,7 +1806,7 @@ i.icon:before {
 .ins-section .ins-search-item:hover,
 .ins-section .ins-search-item.active {
   color: #fff;
-  background: #006bde;
+  background: #3d9688;
 }
 .ins-section .ins-search-item:hover .ins-slug,
 .ins-section .ins-search-item.active .ins-slug,
@@ -1945,7 +1945,7 @@ i.icon:before {
     color: rgba(255,255,255,0.7);
     text-align: center;
     height: 50px;
-    background: #006bde;
+    background: #3d9688;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
