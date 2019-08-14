@@ -4,7 +4,7 @@
 
 # Site
 title: Nathan Almeida
-subtitle: Developer
+subtitle: Desenvolvedor back-end
 description: 
 keywords: Java, C, HTML, PHP, SQL
 author: Nathan Almeida
@@ -14,7 +14,7 @@ language: pt-BR
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://neitan96.github.io/
 root: /
-permalink: :year/:title/
+permalink: post/:year/:title/
 permalink_defaults:
 
 # Directory
@@ -61,7 +61,7 @@ tag_map:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: DD-MM-YYYY
 time_format: HH:mm:ss
 
 # Pagination
@@ -72,9 +72,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hueman
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:Neitan96/neitan96.github.io.git
+  branch: master
