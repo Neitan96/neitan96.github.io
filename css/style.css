@@ -343,7 +343,7 @@ code {
   clear: both;
 }
 #header {
-  background: #26272b;
+  background: #393d3f;
   padding-bottom: 60px;
   position: relative;
 }
@@ -366,6 +366,11 @@ code {
 #header-title:after {
   clear: both;
 }
+#header-title .title {
+  font-size: 3.5em;
+  color: #3d9688;
+  text-align: left;
+}
 #header-title .logo-wrap,
 #header-title .subtitle-wrap {
   float: left;
@@ -375,9 +380,8 @@ code {
   margin-left: 20px;
 }
 #header-title .subtitle {
-  font-size: 16px;
+  font-size: 1em;
   font-style: italic;
-  line-height: 90px;
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
 }
