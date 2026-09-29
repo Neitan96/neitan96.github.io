@@ -4,6 +4,15 @@ const CONFIG = {
   github: {
     username: 'Neitan96', // Your GitHub org/user name. (This is the only required config)
   },
+  about: {
+    tagline: 'Back-end · Python · RPA', // Shown under the name when the GitHub bio is empty.
+    // To hide the `Sobre mim` section, keep it empty.
+    paragraphs: [
+      'Olá 👋, sou o Nathan, mas pode me chamar de Neitan. Sou desenvolvedor back-end em Extrema-MG e comecei a programar aos 16 anos, escrevendo plugins em Java para servidores de Minecraft.',
+      'Depois disso passei por PHP, SQL, C e MQL5, quase sempre em projetos pessoais e sempre no Linux. Hoje estudo e construo automações com Python: RPA, integração com o SAP GUI e controle de impressoras Zebra.',
+      '⚡ Fato curioso: Java é ótimo.',
+    ],
+  },
   /**
    * If you are deploying to https://<USERNAME>.github.io/, for example your repository is at https://github.com/arifszn/arifszn.github.io, set base to '/'.
    * If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/,
@@ -14,7 +23,7 @@ const CONFIG = {
     github: {
       display: true, // Display GitHub projects?
       header: 'Projetos no GitHub',
-      mode: 'automatic', // Mode can be: 'automatic' or 'manual'
+      mode: 'manual', // Mode can be: 'automatic' or 'manual'
       automatic: {
         sortBy: 'updated', // Sort projects by 'stars' or 'updated'
         limit: 8, // How many projects to display.
@@ -25,7 +34,16 @@ const CONFIG = {
       },
       manual: {
         // Properties for manually specifying projects
-        projects: [], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: [
+          'Neitan96/SAPFlowSavvy',
+          'Neitan96/Py-ZPL-Commander',
+          'Neitan96/SimpleCalendar',
+          'Neitan96/ClockSchedulerAPI',
+          'Neitan96/BukkitDevelyBR',
+          'Neitan96/Plukkit',
+          'Neitan96/NaskerLib',
+          'Neitan96/Naylot',
+        ], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
     external: {
@@ -97,15 +115,15 @@ const CONFIG = {
   // Track visitor interaction and behavior. https://www.hotjar.com
   hotjar: { id: '', snippetVersion: 6 },
   themeConfig: {
-    defaultTheme: 'dark',
+    defaultTheme: 'neitan',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode
-    disableSwitch: false,
+    disableSwitch: true,
 
     // Should use the prefers-color-scheme media-query,
     // using user system preferences, instead of the hardcoded defaultTheme
-    respectPrefersColorScheme: true,
+    respectPrefersColorScheme: false,
 
     // Display the ring in Profile picture
     displayAvatarRing: true,
@@ -148,15 +166,16 @@ const CONFIG = {
       'abyss',
       'silk',
       'procyon',
+      'neitan',
     ],
   },
 
   // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a 
+  footer: `Feito com <a 
       class="text-primary" href="https://github.com/arifszn/gitprofile"
       target="_blank"
       rel="noreferrer"
-    >GitProfile</a> and ❤️`,
+    >GitProfile</a>`,
 
   enablePWA: true,
 };

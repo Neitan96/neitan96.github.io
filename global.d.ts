@@ -311,11 +311,28 @@ interface ThemeConfig {
   themes?: Array<string>;
 }
 
+interface About {
+  /**
+   * Short line shown under the name when the GitHub bio is empty
+   */
+  tagline?: string;
+
+  /**
+   * Paragraphs of the "about" card. Empty hides the card.
+   */
+  paragraphs?: Array<string>;
+}
+
 interface Config {
   /**
    * GitHub config
    */
   github: Github;
+
+  /**
+   * About section
+   */
+  about?: About;
 
   /**
    * Vite's base url

@@ -14,6 +14,7 @@ import { SanitizedConfig } from '../interfaces/sanitized-config';
 import ErrorPage from './error-page';
 import ThemeChanger from './theme-changer';
 import { BG_COLOR } from '../constants';
+import AboutCard from './about-card';
 import AvatarCard from './avatar-card';
 import { Profile } from '../interfaces/profile';
 import DetailsCard from './details-card';
@@ -214,7 +215,7 @@ const GitProfileContent = ({
       ) : (
         <>
           <div className={`p-4 lg:p-10 min-h-full ${BG_COLOR}`}>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-box">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-box max-w-7xl mx-auto">
               <div className="col-span-1">
                 <div className="grid grid-cols-1 gap-6">
                   {!sanitizedConfig.themeConfig.disableSwitch && (
@@ -230,6 +231,7 @@ const GitProfileContent = ({
                     loading={loading}
                     avatarRing={sanitizedConfig.themeConfig.displayAvatarRing}
                     resumeFileUrl={sanitizedConfig.resume.fileUrl}
+                    tagline={sanitizedConfig.about.tagline}
                   />
                   <DetailsCard
                     profile={profile}
@@ -265,6 +267,12 @@ const GitProfileContent = ({
               </div>
               <div className="lg:col-span-2 col-span-1">
                 <div className="grid grid-cols-1 gap-6">
+                  {sanitizedConfig.about.paragraphs.length !== 0 && (
+                    <AboutCard
+                      loading={loading}
+                      paragraphs={sanitizedConfig.about.paragraphs}
+                    />
+                  )}
                   {sanitizedConfig.projects.github.display && (
                     <GithubProjectCard
                       header={sanitizedConfig.projects.github.header}

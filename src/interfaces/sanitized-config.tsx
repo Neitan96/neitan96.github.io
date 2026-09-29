@@ -124,8 +124,14 @@ export interface SanitizedThemeConfig {
   themes: Array<string>;
 }
 
+export interface SanitizedAbout {
+  tagline?: string;
+  paragraphs: Array<string>;
+}
+
 export interface SanitizedConfig {
   github: SanitizedGithub;
+  about: SanitizedAbout;
   projects: SanitizedProjects;
   seo: SanitizedSEO;
   social: SanitizedSocial;
