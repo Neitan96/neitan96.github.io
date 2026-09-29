@@ -6,7 +6,7 @@
     'forest', 'aqua', 'lofi', 'pastel', 'fantasy', 'wireframe', 'black',
     'luxury', 'dracula', 'cmyk', 'autumn', 'business', 'acid', 'lemonade',
     'night', 'coffee', 'winter', 'dim', 'nord', 'sunset', 'caramellatte',
-    'abyss', 'silk', 'procyon';
+    'abyss', 'silk', 'procyon', 'neitan';
 }
 
 @plugin "daisyui/theme" {
@@ -47,6 +47,45 @@
   --border: 1px;
 
   /* effects */
+  --depth: 1;
+  --noise: 0;
+}
+
+/* Dark theme based on the teal of the avatar logo */
+@plugin "daisyui/theme" {
+  name: 'neitan';
+  color-scheme: dark;
+
+  --color-base-100: #161c24;
+  --color-base-200: #11161d;
+  --color-base-300: #0c1015;
+  --color-base-content: #d5dde6;
+  --color-primary: #1db4a5;
+  --color-primary-content: #06201d;
+  --color-secondary: #5eead4;
+  --color-secondary-content: #06201d;
+  --color-accent: #f59e0b;
+  --color-accent-content: #1f1300;
+  --color-neutral: #242c37;
+  --color-neutral-content: #d5dde6;
+  --color-info: #38bdf8;
+  --color-info-content: #04212e;
+  --color-success: #22c55e;
+  --color-success-content: #04210f;
+  --color-warning: #f59e0b;
+  --color-warning-content: #1f1300;
+  --color-error: #f87171;
+  --color-error-content: #2b0707;
+
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
   --depth: 1;
   --noise: 0;
 }
